@@ -21,6 +21,16 @@
             <!--Menu lateral!!-->
             <ul id="slide-out" class="side-nav fixed">
                 <li><img src="http://www.usc.edu.co/USC_logo_footer.png" style="max-width: 250px"/></li>
+                <div class="input-field col s3">
+                    <select>
+                        <option value="0" disabled='true'>Seleccione su rol</option>
+                        <option value="1">Asistente</option>
+                        <option value="2">Director</option>
+                        <option value="3">SysAdmin</option>
+                    </select>
+                    <label>Elija Su Rol</label>
+                </div>
+                <br/>
                 <li><a class="subheader" style="font-size: x-large">Laboratorios</a></li>
                 <li><a href="#!">Programar Laboratorio</a></li>
                 <li><a href="#!">Cronograma de Laboratorio</a></li>
@@ -44,9 +54,9 @@
                             <div class="card-content">
                                 <a>PRUEBA</a>
                                 <p:schedule value="#{scheduleView.eventModel}" id="Agenda" view="agendaWeek" allDaySlot="false" widgetVar="myschedule" timeZone="GMT+2">                                  
-            
+
                                 </p:schedule>
-                          
+
                             </div>
                         </div>
                     </div>
@@ -57,10 +67,19 @@
 
     </h:body>
     <script>
+
+        //Muestra el menu select de Roles 
         // Show sideNav
         $('.button-collapse').sideNav('show');
         // Hide sideNav
         $('.button-collapse').sideNav('hide');
+
+
+        //Muestra lista menu select de roles
+        $(document).ready(function () {
+            $('select').material_select();
+        });
+
     </script>
     <style type="text/css">
         .value {
